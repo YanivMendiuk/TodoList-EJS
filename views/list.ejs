@@ -3,9 +3,32 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Todo List</title>
+    <link rel="stylesheet" href="css/styles.css" />
+    <title>Todo List v-1</title>
   </head>
   <body>
-    <h1>It's a <%= kindOfDay %></h1>
+    <div class="box" id="heading">
+      <h1><%= kindOfDay %></h1>
+    </div>
+
+    <div class="box">
+      <% for( let index = 0; index < newListItems.length; index++ ) { %>
+
+      <div class="item">
+        <input type="checkbox" />
+        <p><%= newListItems[index] %></p>
+      </div>
+      <% } %>
+
+      <form class="item" action="/" method="POST">
+        <input
+          type="text"
+          placeholder="New Item"
+          name="newItem"
+          autocomplete="off"
+        />
+        <button type="submit" name="button">+</button>
+      </form>
+    </div>
   </body>
 </html>
